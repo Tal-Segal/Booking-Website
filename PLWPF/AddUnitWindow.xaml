@@ -1,0 +1,115 @@
+﻿<Window x:Class="PLWPF.AddUnitWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        mc:Ignorable="d"
+        Title="AddUnitWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="myLabelStyle"   TargetType="Label">
+            <Setter Property="FontFamily"
+              Value="Segoe Print" />
+            <Setter Property="FontSize"
+                    Value="16"/>
+            <Setter Property="FontWeight"
+              Value="Light" />
+        </Style>
+    </Window.Resources>
+    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Grid.Background>
+            <ImageBrush ImageSource="Pictures\backg.jpg"></ImageBrush>
+        </Grid.Background>
+        <Grid x:Name="UnitDetails" Visibility="Visible" HorizontalAlignment="Stretch" Margin="35,16,388.6,10" VerticalAlignment="Stretch" Width="370">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="14*"/>
+                <RowDefinition Height="34*"/>
+                <RowDefinition Height="22*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="26*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="29*"/>
+                <RowDefinition Height="29*"/>
+                <RowDefinition Height="34*"/>
+                <RowDefinition Height="29*"/>
+                <RowDefinition Height="27*"/>
+                <RowDefinition Height="34*"/>
+                <RowDefinition Height="44*"/>
+            </Grid.RowDefinitions>
+            <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Attractions" HorizontalAlignment="Left" Margin="2,17,0,-7.4" VerticalAlignment="Top" Height="36" Width="78" Grid.Row="12"/>
+            <TextBox x:Name="key1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding HostingUnitKey}" VerticalAlignment="Top" Width="120" Margin="82,33.6,0,0" Grid.RowSpan="2" Grid.Row="1" />
+            <TextBox x:Name="uname1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding HostingUnitName}" VerticalAlignment="Top" Width="120" Margin="82,4,0,0" Grid.Row="3"/>
+            <TextBox  x:Name="price1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding price}" VerticalAlignment="Top" Width="120" Margin="82,2,0,0" Grid.Row="4"/>
+            <ComboBox x:Name="area" SelectedItem="{Binding Area}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="82,10.2,0,0" Height="23" Grid.Row="7" Grid.RowSpan="2"/>
+            <ComboBox x:Name="type"  SelectedItem="{Binding Type}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="82,17.4,0,0" Height="22" Grid.Row="8" Grid.RowSpan="2"/>
+            <Label Style="{StaticResource myLabelStyle}" Content="Unit Details:" HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top" Height="35" Width="150" Grid.RowSpan="2"/>
+            <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Key" HorizontalAlignment="Left" Margin="0,24.6,0,0" VerticalAlignment="Top" Height="30" Width="32" Grid.RowSpan="2" Grid.Row="1"/>
+            <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Unit Name" HorizontalAlignment="Left" Margin="0,19.4,0,0" VerticalAlignment="Top" Height="30" Width="77" Grid.RowSpan="2" Grid.Row="2"/>
+            <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Price" HorizontalAlignment="Left" Margin="0,24.6,0,0" VerticalAlignment="Top" Height="30" Width="40" Grid.RowSpan="2" Grid.Row="3"/>
+            <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Area" HorizontalAlignment="Left" Margin="1,5.2,0,0" VerticalAlignment="Top" Height="30" Width="38" Grid.Row="7" Grid.RowSpan="2"/>
+            <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Type" HorizontalAlignment="Left" Margin="1,9.4,0,0" VerticalAlignment="Top" RenderTransformOrigin="7.243,2.623" Height="30" Width="38" Grid.Row="8" Grid.RowSpan="2"/>
+            <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Adults" HorizontalAlignment="Left" Margin="0,1.4,0,0" VerticalAlignment="Top" Height="30" Width="49" Grid.Row="5" Grid.RowSpan="2"/>
+            <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Children" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Height="30" Width="61" Grid.Row="6" Grid.RowSpan="2"/>
+            <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Pool" HorizontalAlignment="Left" Margin="1,3,0,0" VerticalAlignment="Top" Height="30" Width="35" Grid.Row="9" Grid.RowSpan="2"/>
+            <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Jaccuzi" HorizontalAlignment="Left" Margin="0,3.2,0,0" VerticalAlignment="Top" Height="30" Width="53" Grid.Row="10" Grid.RowSpan="2"/>
+            <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Garden" HorizontalAlignment="Left" Margin="2,5,0,0" VerticalAlignment="Top" Height="30" Width="54" Grid.Row="11" Grid.RowSpan="2"/>
+            <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Beach" HorizontalAlignment="Left" Margin="2,31,0,0" VerticalAlignment="Top" Height="30" Width="46" Grid.Row="11" Grid.RowSpan="2"/>
+            <TextBox x:Name="adults1" Text="{Binding Adults}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="82,6.4,0,0" Grid.Row="5"/>
+            <TextBox x:Name="children1" Text="{Binding Children}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="82,6,0,0" Grid.Row="6" Grid.RowSpan="2"/>
+            <CheckBox Content="Yes" IsChecked="{Binding Pool}" HorizontalAlignment="Left" Margin="82,12,0,0" VerticalAlignment="Top" Height="15" Width="37" Grid.Row="9"/>
+            <CheckBox x:Name="jac" Content="Yes" IsChecked="{Binding Jaccuzi}" HorizontalAlignment="Left" Margin="82,11.2,0,0" VerticalAlignment="Top" Height="15" Width="37" Grid.Row="10"/>
+            <CheckBox Content="Yes" IsChecked="{Binding Garden}" HorizontalAlignment="Left" Margin="82,9,0,0" VerticalAlignment="Top" Height="15" Width="37" Grid.Row="11"/>
+            <CheckBox Content="Yes" IsChecked="{Binding Beach}" HorizontalAlignment="Left" Margin="82,0,0,0" VerticalAlignment="Top" Height="16" Width="37" Grid.Row="12"/>
+            <CheckBox Content="Yes" IsChecked="{Binding ChildrenAttractions}" HorizontalAlignment="Left" Margin="82,27,0,0" VerticalAlignment="Top" Height="15" Width="37" Grid.Row="12"/>
+        </Grid>
+        <Grid x:Name="PrivateDetails" HorizontalAlignment="Stretch" Height="398" Margin="271,16,55,5" VerticalAlignment="Stretch" Width="466">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="68*"/>
+                <RowDefinition Height="36*"/>
+                <RowDefinition Height="27*"/>
+                <RowDefinition Height="22*"/>
+                <RowDefinition Height="32*"/>
+                <RowDefinition Height="41*"/>
+                <RowDefinition Height="24*"/>
+                <RowDefinition Height="34*"/>
+                <RowDefinition Height="41*"/>
+                <RowDefinition Height="37*"/>
+                <RowDefinition Height="36*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="120*"/>
+                <ColumnDefinition Width="83*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="id" HorizontalAlignment="Left" Height="23" Margin="60,50,0,0" TextWrapping="Wrap" Text="{Binding ID}" VerticalAlignment="Top" Width="120" Grid.RowSpan="2" Grid.Column="1"/>
+            <TextBox x:Name="password2" HorizontalAlignment="Left" Height="23" Margin="61,10,0,0" TextWrapping="Wrap" Text="{Binding password}" VerticalAlignment="Top" Width="120" Grid.Row="1" Grid.Column="1"/>
+            <TextBox x:Name="private2" HorizontalAlignment="Left" Height="23" Margin="61,3,0,0" TextWrapping="Wrap" Text="{Binding PrivateName}" VerticalAlignment="Top" Width="120" Grid.Row="2" Grid.Column="1"/>
+            <TextBox x:Name="family2" HorizontalAlignment="Left" Height="23" Margin="61,4.8,0,0" TextWrapping="Wrap" Text="{Binding FamilyName}" VerticalAlignment="Top" Width="120" Grid.Row="3" Grid.RowSpan="2" Grid.Column="1"/>
+            <TextBox x:Name="phone2" HorizontalAlignment="Left" Height="23" Margin="61,15.4,0,0" TextWrapping="Wrap" Text="{Binding PhoneNumber}" VerticalAlignment="Top" Width="120" Grid.Row="4" Grid.RowSpan="2" Grid.Column="1"/>
+            <TextBox x:Name="mailAddress" HorizontalAlignment="Left" Height="23" Margin="61,16,0,0" TextWrapping="Wrap" Text="{Binding MailAddress}" VerticalAlignment="Top" Width="120" Grid.Row="5" Grid.Column="1"/>
+            <CheckBox IsChecked="{Binding CollectionClearance}" Content="I have" HorizontalAlignment="Left" Margin="91,12,0,0" VerticalAlignment="Top" Height="15" Width="52" Grid.Row="6" Grid.RowSpan="2" Grid.Column="1"/>
+            <ComboBox x:Name="bank" HorizontalAlignment="Left" Margin="59,13,0,0" VerticalAlignment="Top" Width="120" Height="22" Grid.Row="7" Grid.RowSpan="2" Grid.Column="1" SelectedItem="{Binding b}" ItemsSource="{Binding Banks}"/>
+            <TextBox x:Name="accuont" HorizontalAlignment="Left" Height="23" Margin="61,11.2,0,0" TextWrapping="Wrap" Text="{Binding BankAccountNumber}" VerticalAlignment="Top" Width="120" Grid.Row="8" Grid.Column="1"/>
+            <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="ID" HorizontalAlignment="Left" Margin="22,46,0,0" VerticalAlignment="Top" Height="30" Width="24" Grid.RowSpan="2"/>
+            <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Password" HorizontalAlignment="Left" Margin="21,7,0,0" VerticalAlignment="Top" Height="30" Width="67" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+            <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Private name" HorizontalAlignment="Left" Margin="19,35,0,0" VerticalAlignment="Top" Height="30" Width="91" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+            <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Family name" HorizontalAlignment="Left" Margin="18,0.8,0,0" VerticalAlignment="Top" Height="30" Width="89" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+            <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Phone number" HorizontalAlignment="Left" Margin="15,11.4,0,0" VerticalAlignment="Top" Height="30" Width="99" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+            <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Mail address" HorizontalAlignment="Left" Margin="16,14,0,0" VerticalAlignment="Top" Height="30" Width="86" Grid.Row="5" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+            <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Collection clearance" HorizontalAlignment="Left" Margin="13,2,0,0" VerticalAlignment="Top" Height="30" Width="129" Grid.Row="6" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+            <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Bank Branch" HorizontalAlignment="Left" Margin="13,6,0,0" VerticalAlignment="Top" Height="30" Width="89" Grid.Row="7" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+            <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Bank account" HorizontalAlignment="Left" Margin="15,1,0,0" VerticalAlignment="Top" Height="46" Width="144" Grid.Row="8" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+            <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="number" HorizontalAlignment="Left" Margin="17,19,0,0" VerticalAlignment="Top" Height="30" Width="57" Grid.Row="8" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+            <Label Style="{StaticResource myLabelStyle}" Content="Personal information:" HorizontalAlignment="Right" Margin="0,7,97,0" VerticalAlignment="Top" Height="38" Width="186" Grid.ColumnSpan="2"/>
+            <Border x:Name="ImageBorder" BorderThickness="2" BorderBrush="Black" Margin="29,45,14,33" Grid.Column="2" Grid.RowSpan="6">
+                <Image x:Name="TesterImage" Source="Pictures/user_icon.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="8,-13,8,-12"/>
+            </Border>
+            <Button x:Name="Button_UploadImage" Content="Add your picture here" FontSize="15" Grid.Column="2" HorizontalAlignment="Stretch" Margin="30,33,10,32" VerticalAlignment="Stretch" Click="Button_UploadImage_Click" Grid.Row="5" Grid.RowSpan="3"/>
+            <Button Padding="0" HorizontalAlignment="Stretch" Height="Auto" Margin="189,4,-41,17" Click="Button_Click_Exit" ToolTipService.ShowDuration="8000" Grid.ColumnSpan="1" Grid.Column="2"/>
+        </Grid>
+
+        <Button Content="Next" FontSize="22" HorizontalAlignment="Stretch" Margin="658,343,59,46" VerticalAlignment="Stretch" Width="75" Height="30" Click="Button_Click_1"/>
+        <Button Content="Back" FontSize="22" HorizontalAlignment="Stretch" Margin="573,343,144,46" VerticalAlignment="Stretch" Width="75" Height="30" Click="Button_Click"/>
+
+    </Grid>
+</Window>

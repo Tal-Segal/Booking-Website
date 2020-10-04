@@ -1,0 +1,91 @@
+﻿<Window x:Class="PLWPF.Order"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        mc:Ignorable="d"
+        Title="Order" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="myLabelStyle"   TargetType="Label">
+            <Setter Property="FontFamily"
+              Value="Segoe Print" />
+            <Setter Property="FontSize"
+                    Value="16"/>
+            <Setter Property="FontWeight"
+              Value="Light" />
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Pictures\image (2).png">
+            </ImageBrush>
+        </Grid.Background>
+        <TabControl Background="{x:Null}" HorizontalAlignment="Left" Height="409" Margin="10,0,0,0" VerticalAlignment="Top" Width="772">
+            <TabItem Header="Add Order" Margin="-2,3,-72,-5">
+                <Grid Margin="0,5,0,0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid HorizontalAlignment="Left" Height="356" Margin="10,10,0,0" VerticalAlignment="Top" Width="746" RenderTransformOrigin="0.043,0.076">
+                        
+                        <Label Content="Filter by area" Style="{StaticResource myLabelStyle}" HorizontalAlignment="Left" Margin="10,-9,0,0" VerticalAlignment="Top"/>
+                        <Label Content="Filter by num of visitors" Style="{StaticResource myLabelStyle}" HorizontalAlignment="Left" Margin="173,-8,0,0" VerticalAlignment="Top"/>
+                        <TextBox Name="num" HorizontalAlignment="Left" Height="23" Margin="303,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" Text="{Binding num1}" TextChanged="TextBox_TextChanged"/>
+                        <Label Content="Enter a number" FontSize="12" Style="{StaticResource myLabelStyle}" HorizontalAlignment="Left" Margin="174,28,0,0" VerticalAlignment="Top"/>
+                        <Label Content="Guest requests list" Style="{StaticResource myLabelStyle}" HorizontalAlignment="Left" Margin="585,98,-3,0" VerticalAlignment="Top" Height="39" Width="164"/>
+                         
+                    </Grid>
+
+                    <DataGrid x:Name="guests" AutoGenerateColumns="False" MouseDoubleClick="guests_MouseDoubleClick" ItemsSource="{Binding lst}" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top" Opacity="0.6" Width="746" Height="213">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="80" Header="Key" Binding="{Binding GuestRequestKey}" />
+                            <DataGridTextColumn Width="80" Header="Name" Binding="{Binding FamilyName}" />
+                            <DataGridTextColumn Width="80" Header="Mail" Binding="{Binding MailAddress}" />
+                            <DataGridTextColumn Width="80" Header="Status" Binding="{Binding Status}" />
+                            <DataGridTextColumn Width="80" Header="Type" Binding="{Binding Type}" />
+                            <DataGridTextColumn Width="80" Header="Area" Binding="{Binding Area}" />
+                        </DataGrid.Columns>
+                        <DataGrid.RowDetailsTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Details}" Margin="10" />
+                            </DataTemplate>
+                        </DataGrid.RowDetailsTemplate>
+                    </DataGrid>
+                    <Label Style="{StaticResource myLabelStyle}" Content="Double click on request to add an order" HorizontalAlignment="Center" Margin="10,335,-1,-10" VerticalAlignment="Top" Height="51" Width="757"/>
+                    <CheckBox x:Name="north" Content="North" HorizontalAlignment="Left" Margin="26,35,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.565,1.704" Click="north_Checked"/>
+                    <CheckBox x:Name="south" Content="South" HorizontalAlignment="Left" Margin="26,51,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.565,1.704" Click="south_Checked" />
+                    <CheckBox x:Name="jerusalem" Content="Jerusalem" HorizontalAlignment="Left" Margin="26,69,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.565,1.704" Click="jerusalem_Checked"/>
+                    <CheckBox x:Name="center" Content="Center" HorizontalAlignment="Left" Margin="26,85,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.565,1.704" Click="center_Checked"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Update Order" Margin="74,3,-74,-5" HorizontalAlignment="Left" Width="170">
+                <Grid Margin="0,5,0,0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid HorizontalAlignment="Left" Height="356" Margin="10,10,0,0" VerticalAlignment="Top" Width="746" RenderTransformOrigin="0.043,0.076"/>
+                    <DataGrid x:Name="orders" AutoGenerateColumns="False" MouseDoubleClick="orders_MouseDoubleClick" ItemsSource="{Binding lst3}" 
+                              HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Opacity="0.6" Width="746" Height="250" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="80" Header="Order key" Binding="{Binding OrderKey}" />
+                            <DataGridTextColumn Width="100" Header="Request key" Binding="{Binding GuestRequestKey}" />
+                            <DataGridTextColumn Width="120" Header="Hosting unit key" Binding="{Binding HostingUnitKey}" />
+                            <DataGridTextColumn Width="80" Header="Status" Binding="{Binding Status}" />
+                        </DataGrid.Columns>
+                        <DataGrid.RowDetailsTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Details}"  Margin="10" />
+                            </DataTemplate>
+                        </DataGrid.RowDetailsTemplate>
+                    </DataGrid>
+                    <Label Style="{StaticResource myLabelStyle}" Content="Double click on order to update" HorizontalAlignment="Center" Margin="9,318,0,0" VerticalAlignment="Top" Height="48" Width="757"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button Padding="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="758,10,12.6,386" Click="Button_Click_Exit" ToolTipService.ShowDuration="8000" Grid.ColumnSpan="1">
+            <Image Source="Pictures\xIcon.png" Height="21" Width="16"/>
+        </Button>
+    </Grid>
+</Window>

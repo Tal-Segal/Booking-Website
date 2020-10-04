@@ -1,0 +1,55 @@
+﻿<Window x:Class="PLWPF.UpdateDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        mc:Ignorable="d"
+        Title="UpdateDetails" Height="430" Width="400">
+    <Window.Resources>
+        <Style x:Key="myLabelStyle"   TargetType="Label">
+            <Setter Property="FontFamily"
+              Value="Segoe Print" />
+            <Setter Property="FontSize"
+                    Value="16"/>
+            <Setter Property="FontWeight"
+              Value="Light" />
+        </Style>
+    </Window.Resources>
+
+    <Grid x:Name="UpdateGrid">
+        <Grid.Background>
+            <ImageBrush ImageSource="Pictures\cozy-winter.jpg"></ImageBrush>
+        </Grid.Background>
+        <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Attractions" HorizontalAlignment="Left" Margin="25,362,0,0" VerticalAlignment="Top" Height="29" Width="78"/>
+        <TextBox x:Name="key1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  IsReadOnly="true" Text="{Binding Path= HostingUnitKey}" VerticalAlignment="Top" Width="120" Margin="105,40,0,0" />
+        <TextBox x:Name="uname1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding HostingUnitName}" VerticalAlignment="Top" Width="120" Margin="105,70,0,0"/>
+        <TextBox x:Name="price1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding price}" VerticalAlignment="Top" Width="120" Margin="105,99,0,0"/>
+        <ComboBox x:Name="area" SelectedItem="{Binding Area}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="105,193,0,0" Height="23"/>
+        <ComboBox x:Name="type"  SelectedItem="{Binding Type}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="105,229,0,0" Height="22"/>
+        <Label Style="{StaticResource myLabelStyle}" Content="Unit Details:" HorizontalAlignment="Left" Margin="22,2,0,0" VerticalAlignment="Top" Height="35" Width="150"/>
+        <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Key" HorizontalAlignment="Left" Margin="23,32,0,0" VerticalAlignment="Top" Height="30" Width="32"/>
+        <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Unit Name" HorizontalAlignment="Left" Margin="23,61,0,0" VerticalAlignment="Top" Height="30" Width="77"/>
+        <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Price" HorizontalAlignment="Left" Margin="23,92,0,0" VerticalAlignment="Top" Height="30" Width="40"/>
+        <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Area" HorizontalAlignment="Left" Margin="24,188,0,0" VerticalAlignment="Top" Height="30" Width="38"/>
+        <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Type" HorizontalAlignment="Left" Margin="24,221,0,0" VerticalAlignment="Top" RenderTransformOrigin="7.243,2.623" Height="30" Width="38"/>
+        <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Adults" HorizontalAlignment="Left" Margin="23,124,0,0" VerticalAlignment="Top" Height="30" Width="49"/>
+        <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Children" HorizontalAlignment="Left" Margin="23,157,0,0" VerticalAlignment="Top" Height="30" Width="61"/>
+        <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Pool" HorizontalAlignment="Left" Margin="24,250,0,0" VerticalAlignment="Top" Height="30" Width="35"/>
+        <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Jaccuzi" HorizontalAlignment="Left" Margin="23,279,0,0" VerticalAlignment="Top" Height="30" Width="53"/>
+        <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Garden" HorizontalAlignment="Left" Margin="25,309,0,0" VerticalAlignment="Top" Height="30" Width="54"/>
+        <Label Style="{StaticResource myLabelStyle}" FontSize="12" Content="Beach" HorizontalAlignment="Left" Margin="25,335,0,0" VerticalAlignment="Top" Height="30" Width="46"/>
+        <TextBox x:Name="adults1" Text="{Binding Adults}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="105,129,0,0"/>
+        <TextBox x:Name="children1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding Children}" VerticalAlignment="Top" Width="120" Margin="105,160,0,0"/>
+        <CheckBox Content="Yes" IsChecked="{Binding Pool}" HorizontalAlignment="Left" Margin="105,259,0,0" VerticalAlignment="Top" Height="15" Width="37"/>
+        <CheckBox x:Name="jac" Content="Yes" IsChecked="{Binding Jaccuzi}" HorizontalAlignment="Left" Margin="105,286,0,0" VerticalAlignment="Top" Height="15" Width="37"/>
+        <CheckBox Content="Yes" IsChecked="{Binding Garden}" HorizontalAlignment="Left" Margin="105,313,0,0" VerticalAlignment="Top" Height="15" Width="37"/>
+        <CheckBox Content="Yes" IsChecked="{Binding Beach}" HorizontalAlignment="Left" Margin="105,341,0,0" VerticalAlignment="Top" Height="16" Width="37"/>
+        <CheckBox Content="Yes" IsChecked="{Binding ChildrenAttractions}" HorizontalAlignment="Left" Margin="105,369,0,0" VerticalAlignment="Top" Height="15" Width="37"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="244,300,0,0" VerticalAlignment="Top" Width="115" Height="39"  RenderTransformOrigin="-0.237,0.65" Background="White" Click="Button_Click"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="243,347,0,0" VerticalAlignment="Top" Width="115" Height="42" Background="White" Click="Button_Click_1" />
+        <Button Padding="0" HorizontalAlignment="Stretch" Height="21" VerticalAlignment="Stretch" Margin="357,10,12.6,363.8" Click="Button_Click_Exit" ToolTipService.ShowDuration="8000" Grid.ColumnSpan="1">
+            <Image Source="Pictures\xIcon.png" Height="18" Width="16"/>
+        </Button>
+    </Grid>
+</Window>

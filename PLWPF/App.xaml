@@ -1,0 +1,150 @@
+﻿<Application x:Class="PLWPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PLWPF"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontSize"
+              Value="34" />
+            <Setter Property="FontFamily"
+              Value="Ink Free" />
+            <Setter Property="FontWeight"
+              Value="Normal" />
+        </Style>
+        <Style x:Key="Triggers" TargetType="Button">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button" x:Name="host">
+                                <Grid>
+                                    <TextBlock Text="Host"/>
+                                    <Border Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                    <Button Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property = "FontSize" Value="38"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="Triggers2" TargetType="Button">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button" x:Name="guest">
+                                <Grid>
+                                    <TextBlock Text="Guest"/>
+                                    <Border Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                    <Button Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property = "FontSize" Value="36"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="Triggers3" TargetType="Button">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button" x:Name="manager">
+                                <Grid>
+                                    <TextBlock Text="Manager"/>
+                                    <Border Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                    <Button Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property = "FontSize" Value="36"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="Triggers4" TargetType="Button">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button" x:Name="add">
+                                <Grid>
+                                    <TextBlock Text="Add hosting unit"/>
+                                    <Border Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                    <Button Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property = "FontSize" Value="36"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="Triggers5" TargetType="Button">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button" x:Name="update">
+                                <Grid>
+                                    <TextBlock Text="Update hosting unit"/>
+                                    <Border Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                    <Button Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property = "FontSize" Value="36"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="Triggers6" TargetType="Button">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button" x:Name="delete">
+                                <Grid>
+                                    <TextBlock Text="Delete hosting unit"/>
+                                    <Border Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                    <Button Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property = "FontSize" Value="36"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="Triggers7" TargetType="Button">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button" x:Name="order">
+                                <Grid>
+                                    <TextBlock Text="Order"/>
+                                    <Border Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                    <Button Background="{x:Null}" BorderBrush="{x:Null}"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property = "FontSize" Value="36"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+    </Application.Resources>
+</Application>
